@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-next14streamingporta-dev-154337-authRole",
+      "UnauthRoleArn": "arn:aws:iam::681318508133:role/amplify-next14streamingporta-dev-154337-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::681318508133:role/amplify-next14streamingporta-dev-154337-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-next14streamingporta-dev-154337-deployment",
+      "UnauthRoleName": "amplify-next14streamingporta-dev-154337-unauthRole",
+      "StackName": "amplify-next14streamingporta-dev-154337",
+      "StackId": "arn:aws:cloudformation:us-east-1:681318508133:stack/amplify-next14streamingporta-dev-154337/b7e71920-d99e-11ee-9058-0a30d691dfc9",
+      "AmplifyAppId": "d2znk9r027al0v"
+    },
+    "categories": {
+      "auth": {
+        "next14streamingporta7fc0b0c6": {
+          "userPoolId": "us-east-1_9ZVMxgj84",
+          "userPoolName": "MorseCode-google-test-pool",
+          "webClientId": "74lga08f8d3hs6039qagkto7oq",
+          "nativeClientId": "74lga08f8d3hs6039qagkto7oq"
+        }
+      }
+    }
+  }
+}
