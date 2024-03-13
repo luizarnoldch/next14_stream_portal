@@ -1,7 +1,5 @@
-import { Suspense } from 'react'
 import { headers } from "next/headers";
-import Spinner from "./Spinner"
-
+import fetcher from "@/lib/fetcher";
 type Props = {}
 
 async function HelloWorldData(){
@@ -13,7 +11,8 @@ async function HelloWorldData(){
     fetchHeaders['Authorization'] = token;
   }
 
-  const response = await fetch(`https://2qmbeh14gg.execute-api.us-east-1.amazonaws.com/Prod`, {
+  const url = `https://2qmbeh14gg.execute-api.us-east-1.amazonaws.com/Prod`
+  const response = await fetch(url, {
     headers: fetchHeaders, 
     cache: 'force-cache',
   });
@@ -24,18 +23,21 @@ async function HelloWorldData(){
  
   const data = await response.json();
 
-  return (
-    <p className='p-4 bg-black text-white font-semibold'>
-        {data.message}
-    </p>
-  )
+  if (!token) {
+    return null
+  }
+
+  const info = await fetcher(url, {token: token, method: "GET"})
+    return (
+      <p className='flex justify-center items-center w-36 h-12 text-white font-semibold'>
+          {data.message}
+      </p>
+    )
 }
 
 const Portal = (props: Props) => {
   return (
-    <Suspense fallback={<Spinner />}>
-      <HelloWorldData />
-    </Suspense>
+    <HelloWorldData />
   )
 }
 
