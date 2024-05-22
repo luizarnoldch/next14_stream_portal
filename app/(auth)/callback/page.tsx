@@ -35,7 +35,7 @@ export default function Callback() {
       }
     });
     return unsubscribe;
-  }, []);
+  }, [loading]);
 
   useEffect(() => {
     if (!loading) {
@@ -43,5 +43,5 @@ export default function Callback() {
     }
   }, [loading, router]);
 
-  return null;
+  return <div>Loading...</div>;
 }
